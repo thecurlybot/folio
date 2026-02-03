@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Badge } from "@/app/components/ui/badge";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import artworkImage from "figma:asset/07090d1c84fb1f267b0240867af7910dff0a572d.png";
+import artworkImage from "../../assets/07090d1c84fb1f267b0240867af7910dff0a572d.png";
 
 const artworks = [
   {
