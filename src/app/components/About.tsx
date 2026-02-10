@@ -2,7 +2,7 @@ import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { WaxSeal } from "@/app/components/WaxSeal";
 import { VintageStamp } from "@/app/components/VintageStamp";
-import profileImage from "figma:asset/022e9c73efe9a227f2e908103171579e79de209d.png";
+const profileImage = "https://via.placeholder.com/400x400/d4a574/ffffff?text=Your+Photo";
 
 export function About() {
   return (
