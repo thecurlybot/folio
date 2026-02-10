@@ -1,6 +1,8 @@
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { motion } from "motion/react";
-import profileImage from "../../assets/022e9c73efe9a227f2e908103171579e79de209d.png";
+import { WaxSeal } from "@/app/components/WaxSeal";
+import { VintageStamp } from "@/app/components/VintageStamp";
+import profileImage from "figma:asset/022e9c73efe9a227f2e908103171579e79de209d.png";
 
 export function About() {
   return (

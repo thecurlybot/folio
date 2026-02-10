@@ -1,7 +1,10 @@
 import { Instagram, Mail, Palette } from "lucide-react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 export function Footer() {
+  const navigate = useNavigate();
+  
   return (
     <footer className="bg-gradient-to-b from-amber-900 to-amber-950 text-amber-100 py-12 px-4 relative overflow-hidden">
       {/* Vintage paper texture */}
@@ -63,26 +66,43 @@ export function Footer() {
             className="flex gap-4"
           >
             {[
-              { Icon: Instagram, href: "https://instagram.com/vescair" },
-              { Icon: Palette, href: "#gallery" },
-              { Icon: Mail, href: "mailto:admin.cairen@proton.me" },
-            ].map(({ Icon, href }, index) => (
-              <motion.a
-                key={index}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-amber-100/10 backdrop-blur-sm border-2 border-amber-700/30 flex items-center justify-center hover:bg-amber-100/20 transition-colors"
-                whileHover={{ 
-                  scale: 1.15, 
-                  rotate: [0, -5, 5, 0],
-                  boxShadow: "0 4px 12px rgba(251, 191, 36, 0.3)" 
-                }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Icon className="size-5 text-amber-200" />
-              </motion.a>
+              { Icon: Instagram, href: "https://www.instagram.com/vescaie/", external: true },
+              { Icon: Palette, href: "/gallery", external: false },
+              { Icon: Mail, href: "mailto:admin.cairen@proton.me", external: true },
+            ].map(({ Icon, href, external }, index) => (
+              external ? (
+                <motion.a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-11 h-11 rounded-full bg-amber-100/10 backdrop-blur-sm border-2 border-amber-700/30 flex items-center justify-center hover:bg-amber-100/20 transition-colors"
+                  whileHover={{ 
+                    scale: 1.15, 
+                    rotate: [0, -5, 5, 0],
+                    boxShadow: "0 4px 12px rgba(251, 191, 36, 0.3)" 
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Icon className="size-5 text-amber-200" />
+                </motion.a>
+              ) : (
+                <motion.button
+                  key={index}
+                  onClick={() => navigate(href)}
+                  className="w-11 h-11 rounded-full bg-amber-100/10 backdrop-blur-sm border-2 border-amber-700/30 flex items-center justify-center hover:bg-amber-100/20 transition-colors"
+                  whileHover={{ 
+                    scale: 1.15, 
+                    rotate: [0, -5, 5, 0],
+                    boxShadow: "0 4px 12px rgba(251, 191, 36, 0.3)" 
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Icon className="size-5 text-amber-200" />
+                </motion.button>
+              )
             ))}
           </motion.div>
         </div>
