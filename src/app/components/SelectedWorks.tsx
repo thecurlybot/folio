@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import artworkImage from "figma:asset/07090d1c84fb1f267b0240867af7910dff0a572d.png";
+const artworkImage = "https://via.placeholder.com/400x400/d4a574/ffffff?text=Artwork";
 
 const selectedWorks = [
   {
